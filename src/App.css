@@ -1,0 +1,20 @@
+body {
+  margin-bottom:50px!important;
+}
+* {
+  box-sizing: border-box;
+}
+.top{
+  margin-top: 20px;
+}
+.container {
+  max-width: 960px;
+}
+header {
+  width: 100%;
+}
+.cursor {
+  cursor: pointer;
+}
+
+

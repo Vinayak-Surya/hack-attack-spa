@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,300,600);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  color: #01403c !important;
+  background: url(http://farm8.staticflickr.com/7064/6858179818_5d652f531c_h.jpg)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.log-form {
+  width: 40%;
+  min-width: 320px;
+  max-width: 475px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+
+  form {
+    display: block;
+    width: 100%;
+    padding: 2em;
+  }
+
+  h1 {
+    width: 100%;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 1em 0em 0em 1.3em;
+    margin: 0;
+  }
+
+  input {
+    margin-bottom: 1em;
+    padding: 0.5em 0;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #5e10b1;
+    border: 1px solid darken(#01403c, 5%);
+    padding: 0.5em 2em;
+    color: white;
+    margin-right: 0.5em;
+    box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+    &:hover {
+      background: #5e10b1;
+    }
+    &:active {
+      background: #5e10b1;
+      box-shadow: inset 0px 1px 1px fadeout(black, 90%);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.alert-box-center {
+  display: flex;
+  justify-content: center;
+}

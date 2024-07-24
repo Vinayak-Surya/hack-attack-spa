@@ -1,0 +1,51 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  color: #01403c !important;
+  background-color: #f4f0e8;
+  font-size: .9em;
+
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .header {
+    background-color: #fff;
+  }
+
+  .logo {
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #42145f !important;
+  }
+
+  .table-bb{
+    border: 3px solid #01403c;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    background-color: #42145f;
+    color: #fff;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: center;
+  }
+}
