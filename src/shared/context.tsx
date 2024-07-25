@@ -67,9 +67,22 @@ export const Provider = ({ children }: any) => {
     }
   };
 
-  const getAccountBalance = async () => {
+  const getAccountBalance = async (accountid: any) => {
     try {
-      const response = await fetch(config.API_URL + "accounts", {
+      const response = await fetch(config.API_URL + "accounts/" + accountid + '/balances', {
+        method: "GET",
+      });
+      const responseJson = await response.json();
+      return responseJson;
+    } catch (err) {
+      // catches errors both in fetch and response.json
+      console.log("api error", err);
+    }
+  };
+
+  const listTransactions = async (accountid: any) => {
+    try {
+      const response = await fetch(config.API_URL + "accounts/" + accountid + "/transactions", {
         method: "GET",
       });
       const responseJson = await response.json();
@@ -105,6 +118,7 @@ export const Provider = ({ children }: any) => {
         getAccounts,
         saveToken,
         getAccountBalance,
+        listTransactions
       }}
     >
       {children}

@@ -6,6 +6,9 @@ import { Login } from "./components/login/login";
 import { NavBar } from "./components/navBar";
 import NotFound from "./components/not-found";
 import Home from "./components/home/home";
+import Transactions from "./components/transactions/transactions";
+import Accounts from "./components/accounts/accounts";
+import Fundstransfer from "./components/fundstransfer/fundstransfer";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
@@ -43,6 +46,30 @@ function App() {
             element={
               <PrivateRoute>
                 <Home />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/transactions"
+            element={
+              <PrivateRoute>
+                <Transactions />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/fundstransfer"
+            element={
+              <PrivateRoute>
+                <Fundstransfer />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/accounts"
+            element={
+              <PrivateRoute>
+                <Accounts />
               </PrivateRoute>
             }
           />

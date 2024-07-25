@@ -1,5 +1,6 @@
 // import { useEffect, useState } from "react";
 // import {Context as context} from "../../shared/context"
+import { Link } from "react-router-dom";
 
 import "./home.scss";
 
@@ -67,22 +68,22 @@ export default function Home() {
       <div className="mb-2"><h5>Recently Used</h5></div> */}
       <div className="row align-items-md-stretch">
         <div className="col-md-2">
-          <div className="row g-0 border bgwhite rounded mb-4 shadow-sm align-center">
-            <div><img width={50} src="https://cdn-icons-png.freepik.com/512/16069/16069655.png" /></div>
+          <Link to="/accounts" className="row pointer-cursor g-0 border bgwhite rounded h-140 mb-4 shadow-sm align-center">
+            <div><img width={70} src="https://cdn-icons-png.freepik.com/512/16069/16069655.png" /></div>
             <div aria-label="accounts & info">Accounts & Info</div>
-          </div>
+          </Link>
         </div>
         <div className="col-md-2">
-          <div className="row g-0 border bgwhite rounded mb-4 shadow-sm align-center">
-            <div><img width={50} src="https://cdn-icons-png.freepik.com/512/9452/9452687.png?ga=GA1.1.1669094140.1721714955" /></div>
+          <Link to="/transactions" className="row pointer-cursor g-0 border bgwhite rounded h-140 mb-4 shadow-sm align-center">
+            <div><img width={70} src="https://cdn-icons-png.freepik.com/512/9452/9452687.png?ga=GA1.1.1669094140.1721714955" /></div>
             <div aria-label="payment history">Payment History</div>
-          </div>
+          </Link>
         </div>
         <div className="col-md-2">
-          <div className="row g-0 border bgwhite rounded mb-4 shadow-sm align-center">
-            <div><img width={50} src="https://cdn-icons-png.freepik.com/512/16933/16933151.png?ga=GA1.1.1669094140.1721714955" /></div>
+          <Link to="/fundstransfer" className="row pointer-cursor g-0 border bgwhite rounded h-140 mb-4 shadow-sm align-center">
+            <div><img width={70} src="https://cdn-icons-png.freepik.com/512/16933/16933151.png?ga=GA1.1.1669094140.1721714955" /></div>
             <div aria-label="funds transfer">Funds Transfer</div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
