@@ -1,21 +1,6 @@
-import { useEffect, useState } from "react";
-import {Context as context} from "../../shared/context"
 import "./fundstransfer.scss";
 
 export default function Home() {
-  const auth = context();
-  const [accounts, setAccounts] = useState<any>([]);
-  useEffect(() => {
-      auth.getAccounts()
-      .then((data:any) => {
-        if (data.Data.Account[1].AccountSubType === "Savings") {
-          auth.getAccountBalance(data.Data.Account[1].AccountId)
-          .then((data:any) => {
-            setAccounts(data.Data.Balance)
-          })
-        }
-      })
-  }, [])
 
   return (
     <>
