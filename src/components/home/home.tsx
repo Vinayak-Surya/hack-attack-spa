@@ -70,19 +70,19 @@ export default function Home() {
         <div className="col-md-2">
           <Link to="/accounts" className="row pointer-cursor g-0 border bgwhite rounded h-140 mb-4 shadow-sm align-center">
             <div><img width={70} src="https://cdn-icons-png.freepik.com/512/16069/16069655.png" /></div>
-            <div aria-label="accounts & info">Accounts & Info</div>
+            <div aria-label="accounts & info" className="mt-3 link">Accounts & Info</div>
           </Link>
         </div>
         <div className="col-md-2">
           <Link to="/transactions" className="row pointer-cursor g-0 border bgwhite rounded h-140 mb-4 shadow-sm align-center">
             <div><img width={70} src="https://cdn-icons-png.freepik.com/512/9452/9452687.png?ga=GA1.1.1669094140.1721714955" /></div>
-            <div aria-label="payment history">Payment History</div>
+            <div aria-label="payment history" className="mt-3 link">Payment History</div>
           </Link>
         </div>
         <div className="col-md-2">
           <Link to="/fundstransfer" className="row pointer-cursor g-0 border bgwhite rounded h-140 mb-4 shadow-sm align-center">
             <div><img width={70} src="https://cdn-icons-png.freepik.com/512/16933/16933151.png?ga=GA1.1.1669094140.1721714955" /></div>
-            <div aria-label="funds transfer">Funds Transfer</div>
+            <div aria-label="funds transfer" className="mt-3 link">Funds Transfer</div>
           </Link>
         </div>
       </div>

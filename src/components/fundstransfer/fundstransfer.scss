@@ -19,6 +19,16 @@
   margin-left: .2rem;
 }
 
+.currency-container {
+  position: relative;
+
+  .currency {
+    position: absolute;
+    top: 31px;
+    right: 5px;
+  }
+}
+
 .h-140 {
   height: 140px;
 }
