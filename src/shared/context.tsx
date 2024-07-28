@@ -10,13 +10,10 @@ const { fetch: originalFetch } = window;
  
 const initialState = {
   loading: false,
-  token: "",
   error: "",
   success: "",
-  secure: "",
-  pwd: "",
-  clientId: "",
-  uuid: ""
+  uuid: "",
+  name: ""
 };
 
 const config = {
@@ -95,14 +92,52 @@ export const Provider = ({ children }: any) => {
 
   const saveToken = async (auth: any) => {
     try {
-      const response = await fetch(config.API_URL + "auth/login", {
-        method: "POST",
-        body: JSON.stringify({
-          username: auth.username,
-          password: auth.password,
-        }),
+      const response = await fetch(config.API_URL + "login?username=" + auth.username + '&password=' + auth.password, {
+        method: "GET",
       });
-      const responseJson = await response.json();
+      const responseJson = await response.text();
+      return responseJson;
+    } catch (err) {
+      // catches errors both in fetch and response.json
+      console.log("api error", err);
+    }
+  };
+
+  const requestTravelInsurance = async (data: any) => {
+    try {
+      const startDate = data.startDate.replace(/\-/g,'/')
+      const response = await fetch(config.API_URL + "transferToTravelInsurance?period=" + data.insurance + "&startDate=" + startDate, {
+        method: "POST",
+      });
+      const responseJson = await response.text();
+      return responseJson;
+    } catch (err) {
+      // catches errors both in fetch and response.json
+      console.log("api error", err);
+    }
+  };
+
+  const requestTravelAccount = async (amount: any) => {
+    try {
+      const response = await fetch(config.API_URL + "transferToTravelAccount?amount=" + amount, {
+        method: "POST",
+      });
+      const responseJson = await response.text();
+      return responseJson;
+    } catch (err) {
+      // catches errors both in fetch and response.json
+      console.log("api error", err);
+    }
+  };
+
+  const requestOpenAccount = async (data: any) => {
+    try {
+      const amount:any = parseFloat(data.amount)
+      const startDate = data.startDate.replace(/\-/g,'/')
+      const response = await fetch(config.API_URL + "openTravel?=amount=" + amount + "&period=" + data.insurance + "&startDate=" + startDate, {
+        method: "POST",
+      });
+      const responseJson = await response.text();
       return responseJson;
     } catch (err) {
       // catches errors both in fetch and response.json
@@ -118,7 +153,11 @@ export const Provider = ({ children }: any) => {
         getAccounts,
         saveToken,
         getAccountBalance,
-        listTransactions
+        listTransactions,
+        requestTravelAccount,
+        requestOpenAccount,
+        requestTravelInsurance,
+        
       }}
     >
       {children}

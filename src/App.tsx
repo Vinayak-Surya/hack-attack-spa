@@ -58,7 +58,7 @@ function App() {
             }
           />
           <Route
-            path="/fundstransfer"
+            path="/travel-accounts"
             element={
               <PrivateRoute>
                 <Fundstransfer />

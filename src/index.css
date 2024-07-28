@@ -49,7 +49,18 @@ body {
     justify-content: center;
   }
 
+  .balance {
+    font-size: 1.3rem;
+    color: #42145f;
+  }
+  
   .pointer-cursor {
     cursor: pointer;
   }
+
+  .title {
+    margin: 0 15px!important;
+    float: left;
+    font-size: 1rem;
+}
 }

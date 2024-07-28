@@ -8,6 +8,13 @@
   padding: 10px;
 }
 
+.graycolor {
+  color: #999;
+}
+
+.font-b {
+  font-weight: bold;
+}
 .border-bottom {
   border-bottom: 1px soild #ccc
 }
@@ -19,14 +26,114 @@
   margin-left: .2rem;
 }
 
-.currency-container {
-  position: relative;
+.equals {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: .6rem;
+}
 
+.float-l {
+  float: left;
+}
+.list li {
+  list-style: none;
+
+  span{
+    margin-left: 5px;
+    margin-top: -3px;
+    vertical-align: top;
+    display: inline-block;
+  }
+}
+.list li:before {
+  content: '';
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin-left: -21px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('https://cdn-icons-png.freepik.com/512/16783/16783481.png?ga=GA1.1.1669094140.1721714955');
+}
+.compare {
+  background-color: #f5f5f5;
+}
+
+.show-balance {
+  color: #42145f;
+}
+
+.border-l {
+  border-left: 1px soild #ccc !important;
+}
+
+.float-r {
+  float: right;
+  text-align: right;
+}
+
+.display-b {
+  display: block;
+}
+
+.display-n {
+  display: none;
+}
+
+.padding-t8 {
+  padding-top: 8px;
+  padding-right: 8px;
+}
+
+.padding-l8 {
+  padding-left: 8px;
+}
+
+.width10 {
+  width:90px !important;
+}
+
+.clear {
+  clear: both;
+}
+
+.link-view {
+  font-size: 1.2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.box-division {
+  position: relative;
+  padding: .3rem .6rem;
+  border-bottom: 1px solid #eee;
+  clear: both;
   .currency {
     position: absolute;
-    top: 31px;
-    right: 5px;
+    top: 40px;
+    left: 20px;
   }
+  .text-align {
+    text-align: right;
+  }
+}
+
+.compare-division {
+  padding: 0.3rem 0.6rem 2.6rem .6rem;
+  border-bottom: 1px solid #eee;
+}
+.bgwhite {
+  background-color: #fff!important;
+}
+.header-collapse {
+  background-color: #f6f6f6!important;
+  padding: 10px 20px !important;
+}
+
+.paddingall {
+  padding: 8px 0px 0 20px;
 }
 
 .h-140 {

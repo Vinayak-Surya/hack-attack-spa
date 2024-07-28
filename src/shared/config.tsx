@@ -1,17 +1,3 @@
-import * as CryptoJS from 'crypto-js'
-
-const secretKey = import.meta.env.VITE_SEC_KEY ? import.meta.env.VITE_SEC_KEY : '12345'
-
-export const encrypt = ( plainText: string ) => {
-    const cipherText = CryptoJS.AES.encrypt(plainText, secretKey).toString()
-    return cipherText
-}
-
-export const decrypt = ( cipherText:string ) => {
-    const bytes = CryptoJS.AES.decrypt(cipherText, secretKey )
-    const plainText = bytes.toString(CryptoJS.enc.Utf8)
-    return plainText
-}
 
 export const createSessionID = (length:any) => {
     let result = '';
@@ -23,4 +9,11 @@ export const createSessionID = (length:any) => {
       counter += 1;
     }
     return result;
+}
+
+export const isHaveTravelAccount = (data:any) => {
+    const result = data.filter((item:any) => {
+        return item.subAccountType === "TravelAccount"
+    })
+    return result
 }

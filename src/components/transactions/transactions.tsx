@@ -6,9 +6,14 @@ export default function Home() {
   const auth = context();
   const [transaction, setTransactions] = useState<any>([]);
   useEffect(() => {
-    auth.listTransactions('374e38b2-d430-462f-b5ff-7e71c8ab0515')
-    .then((data:any) => {
-      setTransactions(data.Data.Transaction)
+    auth.getAccounts()
+      .then((response:any) => {
+        response.map((item:any) => {
+          auth.listTransactions(item.accountId)
+          .then((data:any) => {
+            setTransactions(data)
+          })
+        })  
     })
   }, [])
 

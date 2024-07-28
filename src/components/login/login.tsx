@@ -45,41 +45,32 @@ export function Login({checkLogIn} :any) {
       'passworderror': '',
       'error': ''
     }));
-    const uuid = createSessionID(25);
-    auth.setState((prevState :any) => ({
-      ...prevState,
-      uuid: uuid
-    }));
-    sessionStorage.setItem(uuid, "true")
-    checkLogIn()
-    navigate('/home', { replace: true });
-    // auth.saveToken(login).then((data:any) => {
-    //   if (data && data.status === 'mfa') {
-    //     setLogin(prevState => ({
-    //       ...prevState,
-    //       'loading': false,
-    //       'usernameerror': '',
-    //       'passworderror': '',
-    //       'error': ''
-    //     }));
-    //     auth.setState((prevState: any) => ({
-    //       ...prevState,
-    //       secure: {
-    //         hash: data.hash,
-    //         session: data.session,
-    //         username: login.username,
-    //       },
-    //       pwd: encrypt(login.password),
-    //     }));
-    //     return navigate("/auth");
-    //   } else {
-    //     setLogin(prevState => ({
-    //       ...prevState,
-    //       'loading': false,
-    //       error: 'Invalid username or password',
-    //     }));
-    //   }
-    // });
+    auth.saveToken(login).then((data:any) => {
+      if (data === "Successful") {
+        setLogin(prevState => ({
+          ...prevState,
+          'loading': false,
+          'usernameerror': '',
+          'passworderror': '',
+          'error': ''
+        }));
+        const uuid = createSessionID(25);
+        auth.setState((prevState :any) => ({
+          ...prevState,
+          uuid: uuid,
+          name: login.username
+        }));
+        sessionStorage.setItem(uuid, "true")
+        checkLogIn()
+        navigate('/home', { replace: true });
+      } else {
+        setLogin(prevState => ({
+          ...prevState,
+          'loading': false,
+          error: 'Invalid username or password',
+        }));
+      }
+    });
   }
 
   const handleInput = (name:any) => (e:any) => {
