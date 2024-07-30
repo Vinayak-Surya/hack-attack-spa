@@ -6,11 +6,14 @@ import "./accounts.scss";
 export default function Home() {
   const auth = context();
   const [accounts, setAccounts] = useState<any>([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-      auth.getAccounts()
-      .then((data:any) => {
-        setAccounts(data)
-      })
+    setLoading(true)
+    auth.getAccounts()
+    .then((data:any) => {
+      setLoading(false)
+      setAccounts(data)
+    })
   }, [])
   
   const showBalance = (type:any, balance:any) => {
@@ -21,7 +24,7 @@ export default function Home() {
     }
   }
 
-  function AllCollapseExample({accounts}:any) {
+  function AccountAccordion({accounts}:any) {
     return (
       <>
       {accounts.map((item: any, index:any) => {
@@ -34,11 +37,11 @@ export default function Home() {
                   <tbody>
                     <tr>
                       <td scope="row" className="name">
-                      <span className="subname">Account No.</span>
+                      <span className="subname">{item.subAccountType === 'Savings' ? "Account No.": "FitPass Credit Card"}</span>
                         <div>{item.accountNumber}</div>
                       </td>
                       <td scope="row" className="name">
-                        <span className="subname">Available Balance</span>
+                        <span className="subname">{item.subAccountType === 'Savings' ? "Available Balance": "Amount Outstanding"}</span>
                         <div className="balance">{showBalance(item.subAccountType,item.balance)}</div>
                       </td>
                     </tr>
@@ -53,10 +56,18 @@ export default function Home() {
   }
   return (
     <>
-      <h2 className="ml-3 mb-4">Accounts</h2>
+      <h4 className="ml-3 mb-4">Accounts</h4>
       <div className="ml-3">
+        {loading && (<div>
+          <div className="spinner-border spinner-border-sm" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <div className="spinner-grow spinner-grow-sm" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>)}
         <div className="col-md-6">
-          <AllCollapseExample accounts={accounts} />
+          <AccountAccordion accounts={accounts} />
         </div>
       </div>
     </>
